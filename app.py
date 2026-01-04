@@ -5,6 +5,13 @@ import requests, re
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({
+        "status": "ok",
+        "message": "Insta API is running"
+    })
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0"
 }
